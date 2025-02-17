@@ -1,10 +1,7 @@
-import Navbar from "../components/navbar"
-import Footer from "../components/footer"
 
 export default function User() {
     return (
         <div>
-            <Navbar/>
     <main className="main bg-dark">
       <div className="header">
         <h1>Welcome back<br />Tony Jarvis!</h1>
@@ -42,7 +39,6 @@ export default function User() {
         </div>
       </section>
     </main>
-    <Footer/>
         </div>
     )
 }
