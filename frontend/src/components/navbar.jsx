@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../store/features/authSlice'
+import { resetUser } from '../store/features/userSlice'
 
 export default function Navbar() {
     const dispatch = useDispatch()
@@ -8,6 +9,7 @@ export default function Navbar() {
     const { firstName } = useSelector(state => state.user)
 
     const handleLogout = () => {
+        dispatch(resetUser())
         dispatch(logout())
     }
 
@@ -28,10 +30,10 @@ export default function Navbar() {
                             <i className="fa fa-user-circle"></i>
                             {firstName}
                         </Link>
-                        <button onClick={handleLogout} className="main-nav-item">
+                        <Link to="/" onClick={handleLogout} className="main-nav-item">
                             <i className="fa fa-sign-out"></i>
                             Sign Out
-                        </button>
+                        </Link>
                     </div>
                 ) : (
                     <Link to="/signin" className="main-nav-item">

@@ -63,7 +63,7 @@ export const authService = {
     try {
       const response = await this.getUserProfile(token)
       return response.status === 200
-    } catch (error) {
+    } catch {
       return false
     }
   }

@@ -33,6 +33,10 @@ const userSlice = createSlice({
     updateProfileSuccess: (state, action) => {
       state.firstName = action.payload.firstName
       state.lastName = action.payload.lastName
+    },
+    // Ajout d'un reducer pour réinitialiser l'état
+    resetUser: () => {
+      return initialState
     }
   }
 })
@@ -41,6 +45,7 @@ export const {
   getUserStart, 
   getUserSuccess, 
   getUserFailure,
-  updateProfileSuccess 
+  updateProfileSuccess,
+  resetUser 
 } = userSlice.actions
 export default userSlice.reducer 
