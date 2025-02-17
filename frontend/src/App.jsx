@@ -4,6 +4,8 @@ import Footer from "./components/footer";
 import SignIn from './views/sign-in'
 import User from './views/user'
 import Home from './views/home'
+import PrivateRoute from './components/PrivateRoute'
+
 function App() {
   return (
     <>
@@ -11,7 +13,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/user" element={<User />} />
+          <Route 
+            path="/user" 
+            element={
+              <PrivateRoute>
+                <User />
+              </PrivateRoute>
+            } 
+          />
         </Routes>
       <Footer />
     </>
